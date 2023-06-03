@@ -72,6 +72,8 @@ And we can easily check if that's true, because we used `--visualize` flag. If w
 
 ![Graph 1](Graph_1.png "Graph 1")
 
+![Graph 2](Graph_2.png "Graph 2")
+
 So as we can see, those graphs are clearly isomorphic, thus making the scripts prediction correct!
 
 
