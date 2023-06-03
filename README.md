@@ -29,7 +29,7 @@ You can use your own, custom graphs, by specifying them with one of the provided
 ```
 python check_isomorphism.py --input_type edges
 ```
-- Use a properly formatted text file, contaning a list of edges or adjacency matrices of the desired graphs:
+- Use a properly formatted text file (expected formatting is explained in *help* section, and also can be found in data.txt file provided) contaning a list of edges or adjacency matrices of the desired graphs:
 ```
 python check_isomoprhism.py --input_type from_file --input_file <file_path>
 ```
