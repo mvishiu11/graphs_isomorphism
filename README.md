@@ -37,3 +37,6 @@ python check_isomoprhism.py --input_type from_file --input_file <file_path>
 ```
 python check_isomorphism.py --help
 ```
+
+## Visualization
+TO BE IMPLEMENTED
