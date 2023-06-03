@@ -1,9 +1,9 @@
 import sys
-from src.graph import Graph
-import src.graph_utils as utils
-from src.brute_force import brute_force_isomorphism_test
-from src.graph_parser import graph_parser
-from src.visualize import visualize_graph
+from graph import Graph
+import graph_utils as utils
+from brute_force import brute_force_isomorphism_test
+from graph_parser import graph_parser
+from visualize import visualize_graph
 
 if __name__ == "__main__":
     
