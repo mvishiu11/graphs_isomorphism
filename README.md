@@ -52,8 +52,8 @@ The visualizations of your graphs will be saved in the base dircetory as *html* 
 
 On default scripts checks two graphs: 
 
-**G_1, for which E_1 = [(0, 1), (0, 4), (1, 2), (2, 3), (3, 4)]**
-**G~2, for which E~2 = [(0, 2), (0, 3), (1, 3), (1, 4), (2, 4)]**
+**G<sub>1<\sub>, for which E<sub>1<\sub> = [(0, 1), (0, 4), (1, 2), (2, 3), (3, 4)]**
+**G<sub>2<\sub>, for which E<sub>1<\sub> = [(0, 2), (0, 3), (1, 3), (1, 4), (2, 4)]**
 
 If we run the script using `python check_isomorphism --visualize` we get:
 
