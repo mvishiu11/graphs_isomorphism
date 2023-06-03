@@ -70,9 +70,9 @@ And we can easily check if that's true, because we used `--visualize` flag. If w
 <img src="Graph_1.png" alt="Graph 1" title="Graph 1", style="display: inline-block; margin: 0 auto; max-width: 300px">
 <img src="Graph_2.png" alt="Graph 2" title="Graph 2", style="display: inline-block; margin: 0 auto; max-width: 300px">
 
-![Graph 1](Graph_1.png "Graph 1")
+![Graph 1](Graph_1.png "Graph 1" =250x250)
 
-![Graph 2](Graph_2.png "Graph 2")
+![Graph 2](Graph_2.png "Graph 2" =250x250)
 
 So as we can see, those graphs are clearly isomorphic, thus making the scripts prediction correct!
 
