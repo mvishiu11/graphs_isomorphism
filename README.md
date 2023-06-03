@@ -68,7 +68,7 @@ Those graphs are isomorphic: True!
 And we can easily check if that's true, because we used `--visualize` flag. If we open the visualization we see something like this:
 
 <p align="center">
-  <img src="Graph_1.png" width="350" height="350" title="Graph 1">
+  <h>Graph 1</h><img src="Graph_1.png" width="350" height="350" title="Graph 1">
   <img src="Graph_2.png" width="350" height="350" alt="Graph 2">
 </p>
 
