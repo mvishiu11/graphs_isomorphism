@@ -1,11 +1,17 @@
 import graph_utils as utils
 import numpy as np
+import networkx as nx
 
 class Graph:
+
+    graph_counter = 0
+
     def __init__(self, ) -> None:
         self.edges = []
         self.vertices = []
         self.adj_matrix = []
+        Graph.graph_counter += 1
+        self.graph_id = Graph.graph_counter
     
     def get_graph_order(self):
         if len(self.adj_matrix) != len(self.adj_matrix[0]):
@@ -44,3 +50,7 @@ class Graph:
         graph.vertices = list(range(len(adj_matrix)))
         graph.edges = utils.convert_adj_matrix_to_edges(adj_matrix)
         return graph
+    
+    def to_nx_graph(self) -> nx.Graph:
+        G = nx.Graph(self.edges)
+        return G
