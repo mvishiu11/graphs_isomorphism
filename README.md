@@ -76,7 +76,7 @@ And we can easily check if that's true, because we used `--visualize` flag. If w
 
 <p align="center">
   <img src="Graph_1.png" width="350" title="Graph 1">
-  <img src="Graph_1.png" width="350" alt="Graph 2">
+  <img src="Graph_2.png" width="350" alt="Graph 2">
 </p>
 
 So as we can see, those graphs are clearly isomorphic, thus making the scripts prediction correct!
