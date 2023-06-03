@@ -52,7 +52,7 @@ The visualizations of your graphs will be saved in the base dircetory as *html* 
 
 On default scripts checks two graphs: 
 
-**G<sub>1</sub>, for which E<sub>1</sub> = [(0, 1), (0, 4), (1, 2), (2, 3), (3, 4)]**
+**G<sub>1</sub>, for which E<sub>1</sub> = [(0, 1), (0, 4), (1, 2), (2, 3), (3, 4)]** <br>
 **G<sub>2</sub>, for which E<sub>1</sub> = [(0, 2), (0, 3), (1, 3), (1, 4), (2, 4)]**
 
 If we run the script using `python check_isomorphism --visualize` we get:
@@ -68,7 +68,7 @@ Those graphs are isomorphic: True!
 And we can easily check if that's true, because we used `--visualize` flag. If we open the visualization we see something like this:
 
 ![Graph 1](Graph_1.png)
-![Graph 2]()
+![Graph 2](Graph_2.png)
 
 So as we can see, those graphs are clearly isomorphic, thus making the scripts prediction correct!
 
