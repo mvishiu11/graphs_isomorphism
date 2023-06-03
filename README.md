@@ -39,4 +39,11 @@ python check_isomorphism.py --help
 ```
 
 ## Visualization
-TO BE IMPLEMENTED
+
+Your graphs can be visualized using PyVis. All you need to do (assuming you already installed dependencies using provided requirements.txt file) is add `--visualize` flag:
+
+```
+python check_isomorphism.py --input_type default --visualize
+```
+
+The visualizations of your graphs will be saved in the base dircetory as *html* files with interactive graphs in them.
