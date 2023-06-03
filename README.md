@@ -72,6 +72,6 @@ And we can easily check if that's true, because we used `--visualize` flag. If w
   <img src="Graph_2.png" width="350" height="350" alt="Graph 2">
 </p>
 
-So as we can see, those graphs are clearly isomorphic, thus making the scripts prediction correct!
+So as we can see, those graphs are clearly isomorphic, thus making the script's prediction correct!
 
 
