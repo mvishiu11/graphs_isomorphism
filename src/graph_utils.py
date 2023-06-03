@@ -1,4 +1,3 @@
-import numpy as np
 import copy
 
 def get_graph_order(adj_matrix):
