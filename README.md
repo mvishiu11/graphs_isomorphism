@@ -46,4 +46,30 @@ Your graphs can be visualized using PyVis. All you need to do (assuming you alre
 python check_isomorphism.py --input_type default --visualize
 ```
 
-The visualizations of your graphs will be saved in the base dircetory as *html* files with interactive graphs in them.
+The visualizations of your graphs will be saved in the base dircetory as *html* files with interactive graphs in them. Thanks to visualization it is easy to confirm whether the provided test works correctly. 
+
+### Example usage - default graphs
+
+On default scripts checks two graphs: 
+
+**G~1, for which E~1 = [(0, 1), (0, 4), (1, 2), (2, 3), (3, 4)]
+**G~2, for which E~2 = [(0, 2), (0, 3), (1, 3), (1, 4), (2, 4)]
+
+If we run the script using `python check_isomorphism --visualize` we get:
+
+```
+Using default graphs:
+                Graph 1:  [(0, 1), (0, 4), (1, 2), (2, 3), (3, 4)]
+                Graph 2:  [(0, 2), (0, 3), (1, 3), (1, 4), (2, 4)]
+
+Those graphs are isomorphic: True!
+```
+
+And we can easily check if that's true, because we used `--visualize` flag. If we open the visualization we see something like this:
+
+![Graph 1](image.jpg)
+![Graph 1](image.jpg)
+
+So as we can see, those graphs are clearly isomorphic, thus making the scripts prediction correct!
+
+
