@@ -1,5 +1,15 @@
 import copy
 
+'''
+    This file contains functions that are used to manipulate graphs.
+
+    Functions:
+        get_graph_order(adj_matrix) - returns the order of the graph
+        get_degree_sequence(adj_matrix) - returns the degree sequence of the graph
+        mapping(adj_matrix, pi) - returns the mapping of the graph as an adjacency matrix
+        convert_edges_to_adj_matrix(edges) - converts the graph from edges to adjacency matrix
+        convert_adj_matrix_to_edges(adj_matrix) - converts the graph from adjacency matrix to edges
+'''
 def get_graph_order(adj_matrix):
     if len(adj_matrix) != len(adj_matrix[0]):
         return -1

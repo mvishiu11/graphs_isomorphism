@@ -10,6 +10,7 @@ if __name__ == "__main__":
     g1 = Graph()
     g2 = Graph()
 
+    # Help option
     if("--help" in sys.argv):
             print("""
             This script is used to test if two graphs are isomorphic.
@@ -39,10 +40,12 @@ if __name__ == "__main__":
             """)
             exit(0)
 
+    # Input type option - check if the input type is valid, if not, use default
     input_type = "default"
     if("--input_type" in  sys.argv):
             input_type = sys.argv[sys.argv.index("--input_type") + 1]
 
+    # Default option, use default graphs
     if(input_type == "default"):        
         edges = [(0, 1), (0, 4), (1, 2), (2, 3), (3, 4)]
         AG2 =  [[0, 0, 1, 1, 0], 
@@ -60,6 +63,8 @@ if __name__ == "__main__":
         g2 = Graph.init_with_adj_matrix(AG2)
         print(f"Those graphs are isomorphic: {brute_force_isomorphism_test(g1, g2)}!")
 
+
+    # Maanula edges option, use manually entered edges to create graphs
     if(input_type == "edges"):
         edges1 = []
         edges2 = []
@@ -83,7 +88,8 @@ if __name__ == "__main__":
         g2 = Graph.init_with_edges(edges2)
         print(f"Graph 1: {g1} \nGraph 2: {g2}")
         print(f"Those graphs are isomorphic: {brute_force_isomorphism_test(g1, g2)}!")
-        
+    
+    # Input graphs from file with proper formatting
     if(input_type == "from_file"):
         filename = "..\\data.txt"
         if("--input_file" in sys.argv):
@@ -98,6 +104,7 @@ if __name__ == "__main__":
         print(f"Graph 1: {g1} \nGraph 2: {g2}")
         print(f"Those graphs are isomorphic: {brute_force_isomorphism_test(g1, g2)}!")
 
+    # Visualize option - create html files with graphs with pyvis
     visualize = False
     if("--visualize" in sys.argv):
         visualize = True

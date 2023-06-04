@@ -2,6 +2,14 @@ import networkx as nx
 from graph import Graph
 from pyvis.network import Network
 
+
+'''
+Contains methods for visualizing graphs.
+
+Methods:
+    visualize_graph_through_nx(graph) - visualizes the graph through first converting it to networkx graph
+    visualize_graph(graph) - visualizes the graph manually
+'''
 def visualize_graph_through_nx(graph: Graph):
     G = graph.to_nx_graph()
     net = Network(notebook=True)
@@ -16,7 +24,8 @@ def visualize_graph(graph: Graph):
         net.add_edge(edge[0], edge[1])
     net.show(f"graph{graph.graph_id}.html")
 
-if __name__ == "__main__":
-    edges = [(0, 1), (1, 2), (2, 3), (3, 0)]
-    graph = Graph.init_with_edges(edges)
-    visualize_graph(graph)
+# Run this file to see the visualization of the graph - function used for testing
+# if __name__ == "__main__":
+#     edges = [(0, 1), (1, 2), (2, 3), (3, 0)]
+#     graph = Graph.init_with_edges(edges)
+#     visualize_graph(graph)
