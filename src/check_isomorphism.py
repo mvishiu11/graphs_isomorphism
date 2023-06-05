@@ -1,52 +1,26 @@
 import sys
+import argparse
 from graph import Graph
 from graph_utils import graph_utils as utils
 from brute_force import brute_force_isomorphism_test
 from graph_parser import graph_parser
 from visualize import Visualize as vis
 
+parser = argparse.ArgumentParser(description="This script is used to test if two graphs are isomorphic.")
+parser.add_argument("--input_type", type=str, default="default", help="Type of input. Can be either 'default', 'edges' or 'from_file'.")
+parser.add_argument("--input_file", type=str, default="..\\data.txt", help="Path to the file containing the graphs. Used only if input_type is 'from_file'. Proper formatting is required and can be seen in data.txt.")
+parser.add_argument("--visualize", action="store_true", help="If specified, the graphs will be visualized and saved as html files.")
+args = parser.parse_args()
+
 if __name__ == "__main__":
     
     g1 = Graph()
     g2 = Graph()
 
-    # Help option
-    if("--help" in sys.argv):
-            print("""
-            This script is used to test if two graphs are isomorphic.
-            The input can be given either by specifying edges of the graph or providing adjacency matrix.
-
-            The graphs can be entered either manually or from a file.
-            The input type is specified by the "--input_type" argument.
-            The input file is specified by the "--input_file" argument.
-
-                Usage: python3 isomorphism_test.py --input_type <input_type> --input_file <input_file> --visualize
-                                                                edges                     ".\\data.txt"
-                                                                from_file                 <your_file_path>  
-                                                                default    
-                
-            If you are using a file input, it should be in the following format:
-                
-                <file_begin>
-                input_type (edges/adj_matrix) \\n\\n (double new line)
-                graph1 content \\n\\n (double new line)
-                graph2 content
-                <file_end>
-
-                Precise formatting can be seen in the provided data.txt file.
-
-            If you want to visualize the graphs, use the "--visualize". 
-            The graphs will be saved in the base directory of this app as html files.
-            """)
-            exit(0)
-
     # Input type option - check if the input type is valid, if not, use default
-    input_type = "default"
-    if("--input_type" in  sys.argv):
-            input_type = sys.argv[sys.argv.index("--input_type") + 1]
-
+    
     # Default option, use default graphs
-    if(input_type == "default"):        
+    if(args.input_type == "default"):        
         edges = [(0, 1), (0, 4), (1, 2), (2, 3), (3, 4)]
         AG2 =  [[0, 0, 1, 1, 0], 
                     [0, 0, 0, 1, 1],
@@ -65,7 +39,7 @@ if __name__ == "__main__":
 
 
     # Manual edges option, use manually entered edges to create graphs
-    if(input_type == "edges"):
+    if(args.input_type == "edges"):
         edges1 = []
         edges2 = []
         print("""The edges should be entered as follows:
@@ -90,7 +64,7 @@ if __name__ == "__main__":
         print(f"Those graphs are isomorphic: {brute_force_isomorphism_test(g1, g2)}!")
     
     # Input graphs from file with proper formatting
-    if(input_type == "from_file"):
+    if(args.input_type == "from_file"):
         filename = "..\\data.txt"
         if("--input_file" in sys.argv):
             filename = sys.argv[sys.argv.index("--input_file") + 1]
@@ -105,10 +79,6 @@ if __name__ == "__main__":
         print(f"Those graphs are isomorphic: {brute_force_isomorphism_test(g1, g2)}!")
 
     # Visualize option - create html files with graphs with pyvis
-    visualize = False
-    if("--visualize" in sys.argv):
-        visualize = True
-
-    if(visualize):
+    if(args.visualize):
         vis.visualize_graph(g1)
         vis.visualize_graph(g2)
