@@ -1,24 +1,24 @@
 from graph import Graph
 
-'''
-Graph parser - parse the graph from the file with proper formatting.
-
-Parameters:
-    filename : str - path to the file with graph
-
-Expected formatting of the file:
-    First line: "edges" or "adj_matrix" - type of the input
-    Double newline
-    One or more lines: graph 1 - edges or adjacency matrix, written in a pythonic convention
-    Double newline
-    One or more lines: graph 2 - edges or adjacency matrix, written in a pythonic convention
-
-Returns:
-    g1 : Graph - first graph
-    g2 : Graph - second graph
-'''
 
 def graph_parser(filename: str):
+    """
+    Graph parser - parse the graph from the file with proper formatting.
+
+    Parameters:
+        filename : str - path to the file with graph
+
+    Expected formatting of the file:
+        First line: "edges" or "adj_matrix" - type of the input
+        Double newline
+        One or more lines: graph 1 - edges or adjacency matrix, written in a pythonic convention
+        Double newline
+        One or more lines: graph 2 - edges or adjacency matrix, written in a pythonic convention
+
+    Returns:
+        g1 : Graph - first graph
+        g2 : Graph - second graph
+    """
 
     g1 = Graph()
     g2 = Graph()

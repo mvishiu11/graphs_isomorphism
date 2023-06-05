@@ -1,28 +1,29 @@
-import graph_utils as utils
+from graph_utils import graph_utils as utils
 import numpy as np
 import networkx as nx
 
-'''
-Class representing a graph. It can be initialized with edges or adjacency matrix.
 
-Attributes:
-    edges : list - list of edges
-    vertices : list - list of vertices
-    adj_matrix : list[list] - adjacency matrix
-    graph_id : int - unique id of the graph
-    graph_counter : int - counter of the instances of the class
-
-Methods:
-    get_graph_order() - returns the order of the graph
-    get_degree_sequence() - returns the degree sequence of the graph
-    __str__() - returns the string representation of the graph
-    __repr__() - returns the string representation of the graph
-    __eq__() - returns True if the graphs are equal, False otherwise
-    init_with_edges(edges_list) - initializes the graph with edges
-    init_with_adj_matrix(adj_matrix) - initializes the graph with adjacency matrix
-    to_nx_graph() - returns the networkx graph representation of the graph
-'''
 class Graph:
+    """
+    Class representing a graph. It can be initialized with edges or adjacency matrix.
+
+    Attributes:
+        edges : list - list of edges
+        vertices : list - list of vertices
+        adj_matrix : list[list] - adjacency matrix
+        graph_id : int - unique id of the graph
+        graph_counter : int - counter of the instances of the class
+
+    Methods:
+        get_graph_order() - returns the order of the graph
+        get_degree_sequence() - returns the degree sequence of the graph
+        __str__() - returns the string representation of the graph
+        __repr__() - returns the string representation of the graph
+        __eq__() - returns True if the graphs are equal, False otherwise
+        init_with_edges(edges_list) - initializes the graph with edges
+        init_with_adj_matrix(adj_matrix) - initializes the graph with adjacency matrix
+        to_nx_graph() - returns the networkx graph representation of the graph
+    """
 
     graph_counter = 0
 

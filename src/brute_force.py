@@ -1,21 +1,21 @@
 import itertools
 import numpy as np
-import graph_utils as utils
+from graph_utils import graph_utils as utils
 from graph import Graph
 
-'''
-Brute force isomorphism test - check if two graphs are isomorphic by checking all possible mappings of the 
-first graph to the second graph. If one of the mappings is equal to the second graph, return True, otherwise
-retrun False.
-
-Parameters:
-    g1 : Graph - first graph
-    g2 : Graph - second graph
-
-Returns:
-    bool - True if the graphs are isomorphic, False otherwise
-'''
 def brute_force_isomorphism_test(g1 : Graph, g2 : Graph) -> bool:
+    """
+    Brute force isomorphism test - check if two graphs are isomorphic by checking all possible mappings of the 
+    first graph to the second graph. If one of the mappings is equal to the second graph, return True, otherwise
+    retrun False.
+
+    Parameters:
+        g1 : Graph - first graph
+        g2 : Graph - second graph
+
+    Returns:
+        bool - True if the graphs are isomorphic, False otherwise
+    """
     degree_sequence_1 = g1.get_degree_sequence()
     degree_sequence_2 = g2.get_degree_sequence()
     if g1.get_graph_order() != g2.get_graph_order():
