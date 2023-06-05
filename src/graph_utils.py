@@ -13,6 +13,8 @@ class graph_utils:
         convert_adj_matrix_to_edges(adj_matrix) - converts the graph from adjacency matrix to edges
     """
     def get_graph_order(adj_matrix):
+        if len(adj_matrix) == 0:
+            return 0
         if len(adj_matrix) != len(adj_matrix[0]):
             return -1
         else:
@@ -20,6 +22,8 @@ class graph_utils:
 
     def get_degree_sequence(adj_matrix):
         degree_sequence = []
+        if len(adj_matrix) == 0:
+            return degree_sequence
         for vertex in range(len(adj_matrix)):
             degree_sequence.append(sum(adj_matrix[vertex]))
         degree_sequence.sort(reverse=True)
@@ -39,6 +43,8 @@ class graph_utils:
 
     def convert_edges_to_adj_matrix(edges):
         adj_matrix = []
+        if len(edges) == 0:
+            return adj_matrix
         for i in range(len(edges)):
             adj_matrix.append([])
             for j in range(len(edges)):
@@ -52,6 +58,8 @@ class graph_utils:
 
     def convert_adj_matrix_to_edges(adj_matrix):
         edges = []
+        if len(adj_matrix) == 0:
+            return edges
         for i in range(len(adj_matrix)):
             for j in range(len(adj_matrix)):
                 if adj_matrix[i][j] == 1 and (j, i) not in edges:

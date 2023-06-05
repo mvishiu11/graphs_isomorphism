@@ -23,7 +23,7 @@ def brute_force_isomorphism_test(g1 : Graph, g2 : Graph) -> bool:
     elif not np.array_equal(degree_sequence_1, degree_sequence_2):
         return False
     else:
-        for map in itertools.permutations(g1.vertices):
+        for map in itertools.permutations([obj[0] for obj in enumerate(g1.vertices)]):
             if(np.array_equal(utils.mapping(g1.adj_matrix, map), g2.adj_matrix)):
                 return True
             else:

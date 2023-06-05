@@ -5,6 +5,7 @@ from graph_utils import graph_utils as utils
 from brute_force import brute_force_isomorphism_test
 from graph_parser import graph_parser
 from visualize import Visualize as vis
+from typing import Tuple
 
 parser = argparse.ArgumentParser(description="This script is used to test if two graphs are isomorphic.")
 parser.add_argument("--input_type", type=str, default="default", help="Type of input. Can be either 'default', 'edges' or 'from_file'.")
@@ -48,16 +49,40 @@ if __name__ == "__main__":
 
         print("Enter edges for graph 1:")
         while(True):
-            edge = input("\t: ")
-            if(edge == "end"):
-                break
-            edges1.append(eval(edge))
+            try:    
+                edge = input("\t: ")
+                if(edge == "end"):
+                    break
+                else:
+                    # assert isinstance(eval(edge)[0], int) and isinstance(eval(edge)[1], int)
+                    edges1.append(eval(edge))
+            except ValueError or AssertionError:
+                print("Wrong input format. This script only supports integer values.")
+                continue
+            except NameError:
+                print("Wrong input format. If you want finish entering edges, enter 'end'.\n")
+                continue
+            except Exception as e:
+                print(e.__str__())
+                exit(-1)
+
         print("Enter edges for graph 2: ")
         while(True):
-            edge = input("\t: ")
-            if(edge == "end"):
-                break
-            edges2.append(eval(edge))
+            try:    
+                edge = input("\t: ")
+                if(edge == "end"):
+                    break
+                edges2.append(eval(edge))
+            except ValueError:
+                print("Wrong input format. This script only supports integer values.")
+                continue
+            except NameError:
+                print("Wrong input format. If you want finish entering edges, enter 'end'.\n")
+                continue
+            except Exception as e:
+                print(e.__str__())
+                continue
+
         g1 = Graph.init_with_edges(edges1)
         g2 = Graph.init_with_edges(edges2)
         print(f"Graph 1: {g1} \nGraph 2: {g2}")
