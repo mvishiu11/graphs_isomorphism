@@ -1,9 +1,9 @@
 import sys
 from graph import Graph
-import graph_utils as utils
+from graph_utils import graph_utils as utils
 from brute_force import brute_force_isomorphism_test
 from graph_parser import graph_parser
-from visualize import visualize_graph
+from visualize import Visualize as vis
 
 if __name__ == "__main__":
     
@@ -64,7 +64,7 @@ if __name__ == "__main__":
         print(f"Those graphs are isomorphic: {brute_force_isomorphism_test(g1, g2)}!")
 
 
-    # Maanula edges option, use manually entered edges to create graphs
+    # Manual edges option, use manually entered edges to create graphs
     if(input_type == "edges"):
         edges1 = []
         edges2 = []
@@ -110,5 +110,5 @@ if __name__ == "__main__":
         visualize = True
 
     if(visualize):
-        visualize_graph(g1)
-        visualize_graph(g2)
+        vis.visualize_graph(g1)
+        vis.visualize_graph(g2)
