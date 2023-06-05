@@ -60,8 +60,8 @@ class Graph:
     def init_with_edges(edges_list):
         graph = Graph()
         graph.edges = edges_list
-        graph.vertices = list(set([item for t in edges_list for item in t]))
-        graph.adj_matrix = utils.convert_edges_to_adj_matrix(edges_list)
+        graph.vertices = list(set([item[0] for item in enumerate(edges_list)]))
+        graph.adj_matrix = utils.convert_edges_to_adj_matrix([obj[0] for obj in enumerate(edges_list)])
         return graph
 
     @staticmethod

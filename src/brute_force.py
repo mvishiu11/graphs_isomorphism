@@ -18,6 +18,9 @@ def brute_force_isomorphism_test(g1 : Graph, g2 : Graph) -> bool:
     """
     degree_sequence_1 = g1.get_degree_sequence()
     degree_sequence_2 = g2.get_degree_sequence()
+    print(degree_sequence_1, degree_sequence_2) 
+    print(g1.get_graph_order(), g2.get_graph_order())
+    print(g1.adj_matrix, g2.adj_matrix)
     if g1.get_graph_order() != g2.get_graph_order():
         return False
     elif not np.array_equal(degree_sequence_1, degree_sequence_2):
