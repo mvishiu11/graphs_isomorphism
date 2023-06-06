@@ -23,7 +23,7 @@ if __name__ == "__main__":
     # Default option, use default graphs
     if(args.input_type == "default"):        
         edges = [(0, 1), (0, 4), (1, 2), (2, 3), (3, 4)]
-        AG2 =  [[0, 0, 1, 1, 0], 
+        AG2 =      [[0, 0, 1, 1, 0], 
                     [0, 0, 0, 1, 1],
                     [1, 0, 0, 0, 1],
                     [1, 1, 0, 0, 0],
