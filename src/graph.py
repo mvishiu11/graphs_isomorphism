@@ -56,12 +56,15 @@ class Graph:
     def __eq__(self, other) -> bool:
         return np.array_equal(self.adj_matrix, other.adj_matrix)
 
+    def normalize_edges(self):
+        return utils.edge_normalization(self.edges, self.vertices)
+
     @staticmethod
     def init_with_edges(edges_list):
         graph = Graph()
         graph.edges = edges_list
-        graph.vertices = list(set([item[0] for item in enumerate(edges_list)]))
-        graph.adj_matrix = utils.convert_edges_to_adj_matrix([obj[0] for obj in enumerate(edges_list)])
+        graph.vertices = utils.get_vertices(edges_list)
+        graph.adj_matrix = utils.convert_edges_to_adj_matrix(graph.edges, graph.vertices)
         return graph
 
     @staticmethod
