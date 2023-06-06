@@ -11,6 +11,8 @@ class graph_utils:
         mapping(adj_matrix, pi) - returns the mapping of the graph as an adjacency matrix
         convert_edges_to_adj_matrix(edges) - converts the graph from edges to adjacency matrix
         convert_adj_matrix_to_edges(adj_matrix) - converts the graph from adjacency matrix to edges
+        get_vertices(edges) - returns the vertices of the graph
+        edge_normalization(edges, vertices) - returns the normalized (0, len(vertices)) edges of the graph
     """
     def get_graph_order(adj_matrix):
         if len(adj_matrix) == 0:
@@ -41,16 +43,16 @@ class graph_utils:
             a[i] = b[pi[i]]
         return a
 
-    def convert_edges_to_adj_matrix(edges):
+    def convert_edges_to_adj_matrix(edges, vertices):
         adj_matrix = []
         if len(edges) == 0:
             return adj_matrix
-        for i in range(len(edges)):
+        for i in range(len(vertices)):
             adj_matrix.append([])
-            for j in range(len(edges)):
+            for j in range(len(vertices)):
                 if i == j:
                     adj_matrix[i].append(0)
-                elif (i, j) in edges or (j, i) in edges:
+                elif (vertices[i], vertices[j]) in edges or (vertices[j], vertices[i]) in edges:
                     adj_matrix[i].append(1)
                 else:
                     adj_matrix[i].append(0)
@@ -65,3 +67,22 @@ class graph_utils:
                 if adj_matrix[i][j] == 1 and (j, i) not in edges:
                     edges.append((i, j))
         return edges
+
+    def get_vertices(edges):
+        vertices = []
+        for edge in edges:
+            if edge[0] not in vertices:
+                vertices.append(edge[0])
+            if edge[1] not in vertices:
+                vertices.append(edge[1])
+        return vertices
+
+    def edge_normalization(edges, vertices):
+        new_edges = []
+        for eidx, edge in enumerate(edges):
+            new_edges.append([0, 0])
+            if edge[0] in vertices:
+                new_edges[eidx][0] = vertices.index(edge[0])
+            if edge[1] in vertices:
+                new_edges[eidx][1] = vertices.index(edge[1])
+        return new_edges
