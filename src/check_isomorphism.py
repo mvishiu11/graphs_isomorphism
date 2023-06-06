@@ -54,9 +54,14 @@ if __name__ == "__main__":
                 if(edge == "end"):
                     break
                 else:
-                    # assert isinstance(eval(edge)[0], int) and isinstance(eval(edge)[1], int)
-                    edges1.append(eval(edge))
-            except ValueError or AssertionError:
+                    edge = eval(edge)
+                    try:
+                        assert type(edge) is tuple and type(edge[0]) is int and type(edge[1]) is int and len(edge) == 2
+                    except AssertionError:
+                        print("Wrong input format. This script only supports integer values and only two values can be entered per edge.")
+                        continue
+                    edges1.append(edge)
+            except ValueError:
                 print("Wrong input format. This script only supports integer values.")
                 continue
             except NameError:
