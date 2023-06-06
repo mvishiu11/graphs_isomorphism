@@ -59,12 +59,17 @@ class Graph:
     def normalize_edges(self):
         return utils.edge_normalization(self.edges, self.vertices)
 
+    def add_edge(self, edge) -> None:
+        if edge not in self.edges: 
+            self.edges.append(edge)
+            self.vertices = utils.get_vertices(self.edges)
+            self.adj_matrix = utils.convert_edges_to_adj_matrix(self.edges, self.vertices)
+
     @staticmethod
     def init_with_edges(edges_list):
         graph = Graph()
-        graph.edges = edges_list
-        graph.vertices = utils.get_vertices(edges_list)
-        graph.adj_matrix = utils.convert_edges_to_adj_matrix(graph.edges, graph.vertices)
+        for edge in edges_list:
+            graph.add_edge(edge)
         return graph
 
     @staticmethod
